@@ -1,0 +1,17 @@
+{
+    "Tags": [
+        {"name" : "Visual Art"},
+        {"name" : "Writing"},
+        {"name" : "Reading"},
+        {"name" : "Music"},
+        {"name" : "Science"},
+        {"name" : "History"},
+        {"name" : "Biology"},
+        {"name" : "International Relations"},
+        {"name" : "Political Science"},
+        {"name" : "Physics"},
+        {"name" : "Computer Science"},
+        {"name" : "Travel"}
+    ],
+    "Thoughts": []
+}
