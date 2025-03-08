@@ -1,0 +1,19 @@
+{
+  "name": "ideationstation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lavanyamenon15/IdeationStation.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lavanyamenon15/IdeationStation/issues"
+  },
+  "homepage": "https://github.com/lavanyamenon15/IdeationStation#readme",
+  "description": ""
+}
