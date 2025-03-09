@@ -3,12 +3,15 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import './Stars.css';
 import Star from './Star';
-import Modal from './Modal';
+import { MultiSelect } from 'primereact/multiselect';
+        
 
 function Stars() {
     const valueRef = useRef('');
     const [stars, setStars] = useState([]);
     const [datalength, setdatalength] = useState([0])
+    const [tags, setTags] = useState([])
+    const [selectedTags, setSelectedTags] = useState([])
 
     const getRandomPosition = () => {
         const x = Math.floor(250 + Math.random()* (window.innerWidth  - 300));  // Random x within window width
@@ -25,6 +28,7 @@ function Stars() {
     const addStar = async (id, thought, tags)  => {
         const {x, y, s} = getRandomPosition();
         console.log(valueRef.current.value)
+        tags = selectedTags.map((e) => e.name)
 
         var requestOptions = {
             method : "POST",
@@ -34,7 +38,7 @@ function Stars() {
             },
             body : JSON.stringify({
                 "id": JSON.stringify(datalength + 1), // change thisss  
-                "thought": valueRef.current.value,
+                "thought": valueRef.current,
                 "tag": tags
             })
         }
@@ -47,9 +51,10 @@ function Stars() {
 
         setStars(prevStars => {
             if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
-            return [...prevStars, <Star id={id} thought={valueRef.current.value} tags={tags} key={id} x={x} y={y} s={s} modalState={false}/>];
+            return [...prevStars, <Star id={id} thought={valueRef.current.value} tags={selectedTags.name} key={id} x={x} y={y} s={s} modalState={false}/>];
         });
         setdatalength(datalength + 1)
+        setSelectedTags()
         valueRef.current.value = ""
     };
 
@@ -83,8 +88,25 @@ function Stars() {
 
     }
 
+    const getTags = async () => {
+        var requestOptions = {
+            method : "GET",
+            redirect: "follow"
+        }
+
+        try{ 
+            var tags = await fetch("http://localhost:3000/Tags", requestOptions)
+            var tagsJSON = await tags.json()
+            setTags(tagsJSON)
+        } catch (e) {
+
+        }
+
+    }
+
     useEffect(()=> {
         getStars();
+        getTags();
     },[])
 
     return (
@@ -95,6 +117,11 @@ function Stars() {
                 {stars}
             </div>
 
+            <div>
+                <MultiSelect value={selectedTags} onChange={(e) => setSelectedTags(e.value)} options={tags} optionLabel="name" display="chip" 
+                    placeholder="Select Tags" maxSelectedLabels={3} className="w-full md:w-20rem" />
+            </div>
+
             <div className="Textbox">
                 <input
                     type="text"
@@ -103,7 +130,7 @@ function Stars() {
                 />
                 <button type="button" className="button" onClick={addStar}>Submit</button>
             </div>
-            <Modal> currID={"1"} currThought={"hi"} currTag={""}</Modal>
+        
         </div>
     );
 }
