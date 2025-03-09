@@ -2,12 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import Stars from './Stars';
+import Modal from './Modal';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Stars />
+    <Modal currId = "1" currThought="Test" currTag="Art"></Modal>
   </React.StrictMode>
 );
 
