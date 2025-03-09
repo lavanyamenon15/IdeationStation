@@ -15,10 +15,20 @@ function Stars() {
         return { x, y };
     };
 
-    const addStar = event => {
-        const { x, y } = getRandomPosition();
-        setStars(stars.concat(<Star key={stars.length} x={x} y={y}/>));
+    // const addStar = event  => {
+    //     const {x, y} = getRandomPosition();
+    //     setStars(stars.concat(<Star key={stars.length} x={x} y={y}/>));
+    // };
+
+    const addStar = (id, thought, tags)  => {
+        console.log('addStar called for:', id);
+        const {x, y} = getRandomPosition();
+        setStars(prevStars => {
+            if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
+            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} />];
+        });
     };
+
 
     const getStars = async () => {
         var requestOptions = {
@@ -29,12 +39,11 @@ function Stars() {
         try{ 
             var result = await fetch("http://localhost:3000/Thoughts", requestOptions)
             var resultJSON = await result.json()
-            resultJSON.forEach(element => {
-                console.log(element.id)
-                console.log(element.thought)
-                console.log(element.tags)
+            console.log(resultJSON.length)
+            resultJSON.forEach(elm => {
+                console.log(elm.id, elm.thought, elm.tags);
+                addStar(elm.id, elm.thought, elm.tags);
             });
-            // console.log(resultJSON)
         } catch (e) {
             
         }
@@ -43,7 +52,7 @@ function Stars() {
 
     useEffect(()=> {
         getStars();
-    })
+    },[])
 
     return (
         <div className="Stars">

@@ -5,7 +5,7 @@ import './Stars.css';
 import background from './bg2.png';
 
 
-const Star = ({x, y}) => {
+const Star = ({id, thought, tags, x, y}) => {
     return (
     <motion.img
         src={star}
