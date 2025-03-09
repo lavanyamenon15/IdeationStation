@@ -17,6 +17,7 @@ const Star = ({id, thought, tags, x, y, s}) => {
             className='star-logo'
             initial={{ opacity: 0, scale: 0 }}
             animate={{ opacity: 1, scale: 1 }}
+            drag
             transition={{
                 duration: 0.4,
                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
@@ -28,7 +29,7 @@ const Star = ({id, thought, tags, x, y, s}) => {
                 width: `${s}px`,
                 height: `${s}px`,
                 pointerEvents: "all",
-                filter: "drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))",
+                filter: "drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.5))",
                 background: "none", // Ensures no background styling
                 border: "none"
             }}

@@ -4,50 +4,14 @@ import { motion } from 'framer-motion';
 import './Stars.css';
 import Star from './Star';
 
-
-    // const Star = ({x, y, s}) => {
-
-    //     const handleClick = () => {
-    //         alert("hello");
-    //     } 
-
-    //     return (
-    //         <motion.img
-    //             src={star}
-    //             className='star-logo'
-    //             initial={{ opacity: 0, scale: 0 }}
-    //             animate={{ opacity: 1, scale: 1 }}
-    //             transition={{
-    //                 duration: 0.4,
-    //                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-    //             }}
-    //             style={{
-    //                 position: 'absolute',
-    //                 left: `${x}px`,
-    //                 top: `${y}px`,
-    //                 width: `${s}px`,
-    //                 height: `${s}px`,
-    //                 pointerEvents: "all",
-    //                 filter: "drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))",
-    //                 background: "none", // Ensures no background styling
-    //                 border: "none"
-    //             }}
-    //             onClick={handleClick}
-    //         />
-    //     )
-    // };
-
-
-
-
 function Stars() {
     const valueRef = useRef('');
     const [stars, setStars] = useState([]);
     const [datalength, setdatalength] = useState([0])
 
     const getRandomPosition = () => {
-        const x = Math.floor(Math.random() * window.innerWidth);  // Random x within window width
-        const y = Math.floor(Math.random() * window.innerHeight); // Random y within window height
+        const x = Math.floor(250 + Math.random() * (window.innerWidth - 300));
+        const y = Math.floor(50 + Math.random() * (window.innerHeight - 200));
         const s = Math.floor(Math.random() * 60) + 10;
         return { x, y, s };
     };
