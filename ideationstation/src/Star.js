@@ -2,8 +2,7 @@ import star from './star.svg';
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Stars.css';
-import background from './bg2.png';
-import Modal from './Modal';
+import './Modal.css';
 
 
 const Star = ({id, thought, tags, x, y, s}) => {
@@ -42,16 +41,28 @@ const Star = ({id, thought, tags, x, y, s}) => {
             {isModalOpen && (
                 <div className="modal">
                 <div onClick={toggleModal} className="overlay"></div>
-                <div className="modal-content">
+                <motion.div 
+                className="modal-content"
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                    duration: 0.4,
+                    scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
+                }}
+                drag
+                style={{
+                    filter: "drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.5))"
+                }}>
                     <p>
-                    Thought: {thought}
+                    {thought}
+                    <br></br>
                     <br></br>
                     Tags: {tags}
                     </p>
                     <button className="close-modal" onClick={toggleModal}>
                     X
                     </button>
-                </div>
+                </motion.div>
                 </div>
             )}
         </div>

@@ -1,0 +1,40 @@
+.search-container {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    margin: 10px; /* Optional: adds a little space from the top-right corner */
+}
+  
+.search-box {
+    position: fixed;
+    text-align: left;
+    top: 10px;
+    right: 10px;
+    border-radius: 4px;
+    margin: 3px;
+    width: 180px;
+    height: 20px;
+}
+
+.results-container {
+    position: fixed;
+    top: 50px; /* Adjusted so it appears below the search bar */
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    max-height: 300px; /* Set a max height to prevent overflow */
+    overflow-y: auto; /* Allows scrolling if too many results */
+}
+  
+.result-card {
+    width: 180px; /* Matches the width of the search box */
+    background-color: #f8f9fa; /* Light background */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: wrap;
+    text-overflow: ellipsis;
+}

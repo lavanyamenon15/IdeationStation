@@ -1,5 +1,6 @@
 import './App.css';
 import FilterTag from './FilterTag';
+import SearchBar from './SearchBar';
 import Stars from './Stars';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
 
   return (
     <div className="App">
+      <SearchBar></SearchBar>
       <FilterTag></FilterTag>
       <Stars></Stars> 
     </div>

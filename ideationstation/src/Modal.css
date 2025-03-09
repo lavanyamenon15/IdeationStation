@@ -3,7 +3,7 @@ body.active-modal {
 }
 
 .btn-modal {
-    border-radius: 12px;
+    border-radius: 20px;
     padding: 10px 20px;
     display: block;
     margin: 100px auto 0;
@@ -29,9 +29,9 @@ body.active-modal {
     left: 50%;
     transform: translate(-50%, -50%);
     line-height: 1.4;
-    background: #f1f1f1;
+    background: #bfa2fc;
     padding: 14px 28px;
-    border-radius: 3px;
+    border-radius: 8px;
     max-width: 600px;
     min-width: 300px;
 }
