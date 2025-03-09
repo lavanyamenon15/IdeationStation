@@ -64,28 +64,65 @@
       "thought": "I would love to learn how to be successful in a hackathon"
     },
     {
-      "id": "6",
-      "thought": ""
+      "id": "12",
+      "thought": "I want to learn about ancient rome"
     },
     {
       "id": "7",
-      "thought": "helloooo"
+      "thought": "I really enjoy playing cards and want to learn how to perform magic tricks"
     },
     {
-      "id": "8",
-      "thought": "hiiiii"
+      "id": "15",
+      "thought": "Hi there",
+      "tag": [
+        "Music",
+        "Science"
+      ]
     },
     {
       "id": "9",
-      "thought": "hellooooooo"
+      "thought": "hello, my name is lavanya, i love to read and write and type and write a lot of text ",
+      "tag": [
+        "Writing",
+        "Reading",
+        "Music"
+      ]
     },
     {
       "id": "10",
-      "thought": "hiii"
+      "thought": "Hellooooo",
+      "tag": [
+        "Music",
+        "Reading"
+      ]
+    },
+    {
+      "id": "11",
+      "thought": "hellooooooo",
+      "tag": [
+        "Music",
+        "Science",
+        "Writing"
+      ]
     },
     {
       "id": "12",
-      "thought": "i've been hearing a lot about flow recently, i want to watch it when i have time"
+      "thought": "helllooo",
+      "tag": [
+        "Music",
+        "Reading",
+        "Writing",
+        "Visual Art"
+      ]
+    },
+    {
+      "id": "13",
+      "thought": "hiiii",
+      "tag": [
+        "Reading",
+        "Writing",
+        "Music"
+      ]
     }
   ]
 }
