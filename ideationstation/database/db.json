@@ -52,7 +52,7 @@
   "Thoughts": [
     {
       "id": "15",
-      "thought": "Hi there",
+      "thought": "i just met someone who works on music technology today and it made me really curious about how can we use music more interactive with different technology.",
       "tag": [
         "Music",
         "Science"
@@ -60,19 +60,16 @@
     },
     {
       "id": "10",
-      "thought": "flow",
+      "thought": "i watched flow yesterday and now i really wanna look into how animations are made",
       "tag": [
-        "Music",
-        "Reading"
+        "Visual Art"
       ]
     },
     {
       "id": "11",
-      "thought": "rome",
+      "thought": "bucket list: rome.",
       "tag": [
-        "Music",
-        "Science",
-        "Writing"
+        "Travel"
       ]
     },
     {
@@ -86,18 +83,23 @@
       ]
     },
     {
-      "id": "13",
-      "thought": "annyeong",
-      "tag": [
-        "Reading",
-        "Writing",
-        "Music"
-      ]
-    },
-    {
       "id": "6",
       "thought": "new thing",
       "tag": []
+    },
+    {
+      "id": "7",
+      "thought": "florence",
+      "tag": [
+        "Travel"
+      ]
+    },
+    {
+      "id": "8",
+      "thought": "happy",
+      "tag": [
+        "Reading"
+      ]
     }
   ]
 }

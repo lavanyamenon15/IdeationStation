@@ -31,7 +31,7 @@ const Star = ({id, thought, tags, x, y, s}) => {
                 width: `${s}px`,
                 height: `${s}px`,
                 pointerEvents: "all",
-                filter: "drop-shadow(6px 6px 10px rgba(0, 0, 0, 0.5))",
+                filter: "drop-shadow(4px 4px 5px rgba(255, 255, 220, 0.5))",
                 background: "none", // Ensures no background styling
                 border: "none"
             }}

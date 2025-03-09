@@ -61,7 +61,7 @@ function Stars() {
         const {x, y} = getRandomPosition();
         setStars(prevStars => {
             if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
-            return [...prevStars, <Star id={id} thought={thought} tags={(String)(tags)} key={id} x={x} y={y} modalState={false} />];
+            return [...prevStars, <Star id={id} thought={thought} tags={JSON.stringify(tags)} key={id} x={x} y={y} modalState={false} />];
         });
     };
 
