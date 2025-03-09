@@ -3,12 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import Stars from './Stars';
 import Modal from './Modal';
+import FilterTag from './FilterTag';
 import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <FilterTag></FilterTag>
     <Modal currId = "1" currThought="Test" currTag="Art"></Modal>
+    <Stars></Stars>
   </React.StrictMode>
 );
 
