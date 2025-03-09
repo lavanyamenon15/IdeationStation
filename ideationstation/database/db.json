@@ -93,6 +93,11 @@
         "Writing",
         "Music"
       ]
+    },
+    {
+      "id": "6",
+      "thought": "new thing",
+      "tag": []
     }
   ]
 }
