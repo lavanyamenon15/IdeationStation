@@ -45,11 +45,18 @@ function Stars() {
     return (
         <div className="Stars">
             <header className="App-header" style={{backgroundImage: `url(${background})`}}>
-                <button type="button" className="button" onClick={addStar}></button>
             </header>
 
             <div className="star-container">
                     {stars}
+            </div>
+
+            <div className="Textbox">
+                <input
+                    type="text"
+                    placeholder="Enter your thoughts..."
+                />
+                <button type="button" className="button" onClick={addStar}>Submit</button>
             </div>
         </div>
     );

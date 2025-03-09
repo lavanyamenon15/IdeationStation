@@ -8,7 +8,7 @@
   }
   
   .App-header {
-    background-color: #2b0c75;
+    background-color: rgb(71, 35, 155);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -47,4 +47,40 @@
     to {
       transform: rotate(360deg);
     }
+  }
+
+  .Textbox {
+    position: fixed;
+    bottom: 40px; /* Adjust distance from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    width: 80%; /* Adjust width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Space between input and button */
+  }
+  
+  .Textbox input {
+    width: 70%; /* Make input longer */
+    padding: 20px;
+    font-size: 16px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  .Textbox button {
+    padding: 12px 20px;
+    font-size: 16px;
+    border: none;
+    background-color: #531bec;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Textbox button:hover {
+    background-color: #0056b3;
   }
