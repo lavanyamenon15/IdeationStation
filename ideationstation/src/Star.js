@@ -3,16 +3,19 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Stars.css';
 import background from './bg2.png';
+import Modal from './Modal';
 
 
 const Star = ({id, thought, tags, x, y, s}) => {
-
-    const handleClick = () => {
-        alert("hello");
-    } 
+    const [isModalOpen, setIsModalOpen] = useState(false);
+     
+    const toggleModal = () => {
+        setIsModalOpen(!isModalOpen);
+    };
 
     return (
-        <motion.img
+        <div>
+            <motion.img
             src={star}
             className='star-logo'
             initial={{ opacity: 0, scale: 0 }}
@@ -33,30 +36,27 @@ const Star = ({id, thought, tags, x, y, s}) => {
                 background: "none", // Ensures no background styling
                 border: "none"
             }}
-            onClick={handleClick}
-        />
+            onClick={toggleModal}
+            />
+
+            {isModalOpen && (
+                <div className="modal">
+                <div onClick={toggleModal} className="overlay"></div>
+                <div className="modal-content">
+                    <p>
+                    Thought: {thought}
+                    <br></br>
+                    Tags: {tags}
+                    </p>
+                    <button className="close-modal" onClick={toggleModal}>
+                    X
+                    </button>
+                </div>
+                </div>
+            )}
+        </div>
+        
     )
-
-    // return (
-    // <motion.img
-    //     src={star}
-    //     className='star-logo'
-    //     initial={{ opacity: 0, scale: 0 }}
-    //     animate={{ opacity: 1, scale: 1 }}
-    //     transition={{
-    //         duration: 0.4,
-    //         scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-    //     }}
-    //     style={{
-    //         position: 'absolute',
-    //         left: `${x}px`,
-    //         top: `${y}px`,
-    //         width: '50px',  // Adjust the size of the star if necessary
-    //         zIndex: 10,
-    //     }}
-    // />)
-
-    // <img src={star} className="star-logo" alt="logo" />
 };
 
 export default Star;

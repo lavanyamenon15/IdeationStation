@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Stars.css';
 import Star from './Star';
+import Modal from './Modal';
 
 function Stars() {
     const valueRef = useRef('');
@@ -8,9 +9,9 @@ function Stars() {
     const [datalength, setdatalength] = useState([0])
 
     const getRandomPosition = () => {
-        const x = Math.floor(250 + Math.random() * (window.innerWidth - 300));
-        const y = Math.floor(50 + Math.random() * (window.innerHeight - 200));
-        const s = Math.floor(Math.random() * 60) + 10;
+        const x = Math.floor(250 + Math.random()* (window.innerWidth  - 300));  // Random x within window width
+        const y = Math.floor(50 + Math.random() * (window.innerHeight - 200)); // Random y within window height
+        const s = Math.floor(Math.random() * 60) + 20;
         return { x, y, s };
     };
 
@@ -30,7 +31,7 @@ function Stars() {
                 'Content-Type': 'application/json',
             },
             body : JSON.stringify({
-                "id": datalength + 1, // change thisss  
+                "id": JSON.stringify(datalength + 1), // change thisss  
                 "thought": valueRef.current.value,
                 "tag": tags
             })
@@ -44,16 +45,17 @@ function Stars() {
 
         setStars(prevStars => {
             if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
-            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} s={s}/>];
+            return [...prevStars, <Star id={id} thought={valueRef.current.value} tags={tags} key={id} x={x} y={y} s={s} modalState={false}/>];
         });
         setdatalength(datalength + 1)
+        valueRef.current.value = ""
     };
 
     const loadStar = (id, thought, tags)  => {
         const {x, y} = getRandomPosition();
         setStars(prevStars => {
             if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
-            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} />];
+            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} modalState={false} />];
         });
     };
 
@@ -99,7 +101,7 @@ function Stars() {
                 />
                 <button type="button" className="button" onClick={addStar}>Submit</button>
             </div>
-
+            <Modal> currID={"1"} currThought={"hi"} currTag={""}</Modal>
         </div>
     );
 }
