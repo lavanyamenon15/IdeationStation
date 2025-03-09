@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import { useState } from 'react';
-import './App.css'; // !!! change to textbox css file after creating
+import './Textbox.css'; // !!! change to textbox css file after creating
 
 function Textbox() {
   const [val, setVal] = useState("Enter your thoughts!")
@@ -11,7 +11,7 @@ function Textbox() {
     setVal(event.target.value)
   }
   return (
-    <div className="App">
+    <div className="Textbox">
       <input onChange = {change} 
       value = {val} />
       <button onClick = {submit}>Submit</button> 
