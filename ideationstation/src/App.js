@@ -1,7 +1,7 @@
 import './App.css';
-import FilterTag from './FilterTag';
-import SearchBar from './SearchBar';
-import Stars from './Stars';
+import FilterTag from './FilterTag.js';
+import SearchBar from './SearchBar.js';
+import Stars from './Stars.js';
 
 function App() {
 

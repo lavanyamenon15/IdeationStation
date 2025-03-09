@@ -100,6 +100,56 @@
       "tag": [
         "Reading"
       ]
+    },
+    {
+      "id": "8",
+      "thought": "roman history is so cool. julius caesar's life story was crazy",
+      "tag": [
+        "History"
+      ]
+    },
+    {
+      "id": "9",
+      "thought": "i want to learn to build clay figurine magnets",
+      "tag": [
+        "Visual Art"
+      ]
+    },
+    {
+      "id": "10",
+      "thought": "korean history is so fascinating, i really want to visit one day",
+      "tag": [
+        "Travel",
+        "History"
+      ]
+    },
+    {
+      "id": "11",
+      "thought": "my substack is long overdue, i should really get back on it",
+      "tag": [
+        "Writing"
+      ]
+    },
+    {
+      "id": "12",
+      "thought": "i want to tap into more russian literary works, maybe start with anna karenina",
+      "tag": [
+        "Reading"
+      ]
+    },
+    {
+      "id": "13",
+      "thought": "i want to read RF Kuang's discography ",
+      "tag": [
+        "Music"
+      ]
+    },
+    {
+      "id": "14",
+      "thought": "hello world why?",
+      "tag": [
+        "Computer Science"
+      ]
     }
   ]
 }
