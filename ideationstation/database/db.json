@@ -51,27 +51,6 @@
   ],
   "Thoughts": [
     {
-      "id": "0",
-      "thought": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      "tag": []
-    },
-    {
-      "id": "4",
-      "thought": "I would love to learn about South Indian History and its relationship with colonialism"
-    },
-    {
-      "id": "5",
-      "thought": "I would love to learn how to be successful in a hackathon"
-    },
-    {
-      "id": "12",
-      "thought": "I want to learn about ancient rome"
-    },
-    {
-      "id": "7",
-      "thought": "I really enjoy playing cards and want to learn how to perform magic tricks"
-    },
-    {
       "id": "15",
       "thought": "Hi there",
       "tag": [
@@ -80,17 +59,8 @@
       ]
     },
     {
-      "id": "9",
-      "thought": "hello, my name is lavanya, i love to read and write and type and write a lot of text ",
-      "tag": [
-        "Writing",
-        "Reading",
-        "Music"
-      ]
-    },
-    {
       "id": "10",
-      "thought": "Hellooooo",
+      "thought": "flow",
       "tag": [
         "Music",
         "Reading"
@@ -98,7 +68,7 @@
     },
     {
       "id": "11",
-      "thought": "hellooooooo",
+      "thought": "rome",
       "tag": [
         "Music",
         "Science",
@@ -107,7 +77,7 @@
     },
     {
       "id": "12",
-      "thought": "helllooo",
+      "thought": "lorem ipsum is blah blah blah blah blah blah blah blah blah blah blah blah blah",
       "tag": [
         "Music",
         "Reading",
@@ -117,7 +87,7 @@
     },
     {
       "id": "13",
-      "thought": "hiiii",
+      "thought": "annyeong",
       "tag": [
         "Reading",
         "Writing",
