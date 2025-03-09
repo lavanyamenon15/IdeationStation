@@ -18,14 +18,23 @@
   }
    .box-list {
     list-style-type: none;
-    color: white;
     padding: 0;
     margin: 0;
   }
-   .box-item {
-    padding: 10px;
-    margin-bottom: 0px;
-    border-radius: 4px;
-    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+  .box-button {
+    width: 100%;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    text-align: left;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .box-button:hover {
+    color: #7a7a7a;
   }
  

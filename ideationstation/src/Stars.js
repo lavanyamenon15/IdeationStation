@@ -43,7 +43,7 @@ function Stars() {
 
     useEffect(()=> {
         getStars();
-    })
+    },[])
 
     return (
         <div className="Stars">
