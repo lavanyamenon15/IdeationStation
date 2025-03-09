@@ -3,42 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import './Stars.css';
 import Star from './Star';
-
-
-    // const Star = ({x, y, s}) => {
-
-    //     const handleClick = () => {
-    //         alert("hello");
-    //     } 
-
-    //     return (
-    //         <motion.img
-    //             src={star}
-    //             className='star-logo'
-    //             initial={{ opacity: 0, scale: 0 }}
-    //             animate={{ opacity: 1, scale: 1 }}
-    //             transition={{
-    //                 duration: 0.4,
-    //                 scale: { type: "spring", visualDuration: 0.4, bounce: 0.5 },
-    //             }}
-    //             style={{
-    //                 position: 'absolute',
-    //                 left: `${x}px`,
-    //                 top: `${y}px`,
-    //                 width: `${s}px`,
-    //                 height: `${s}px`,
-    //                 pointerEvents: "all",
-    //                 filter: "drop-shadow(4px 4px 10px rgba(0, 0, 0, 0.5))",
-    //                 background: "none", // Ensures no background styling
-    //                 border: "none"
-    //             }}
-    //             onClick={handleClick}
-    //         />
-    //     )
-    // };
-
-
-
+import Modal from './Modal';
 
 function Stars() {
     const valueRef = useRef('');
@@ -46,9 +11,9 @@ function Stars() {
     const [datalength, setdatalength] = useState([0])
 
     const getRandomPosition = () => {
-        const x = Math.floor(Math.random() * window.innerWidth);  // Random x within window width
-        const y = Math.floor(Math.random() * window.innerHeight); // Random y within window height
-        const s = Math.floor(Math.random() * 60) + 10;
+        const x = Math.floor(250 + Math.random()* (window.innerWidth  - 300));  // Random x within window width
+        const y = Math.floor(50 + Math.random() * (window.innerHeight - 200)); // Random y within window height
+        const s = Math.floor(Math.random() * 60) + 20;
         return { x, y, s };
     };
 
@@ -68,7 +33,7 @@ function Stars() {
                 'Content-Type': 'application/json',
             },
             body : JSON.stringify({
-                "id": datalength + 1, // change thisss  
+                "id": JSON.stringify(datalength + 1), // change thisss  
                 "thought": valueRef.current.value,
                 "tag": tags
             })
@@ -82,16 +47,17 @@ function Stars() {
 
         setStars(prevStars => {
             if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
-            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} s={s}/>];
+            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} s={s} modalState={false}/>];
         });
         setdatalength(datalength + 1)
+        valueRef.current.value = ""
     };
 
     const loadStar = (id, thought, tags)  => {
         const {x, y} = getRandomPosition();
         setStars(prevStars => {
             if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
-            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} />];
+            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} modalState={false} />];
         });
     };
 
@@ -137,7 +103,7 @@ function Stars() {
                 />
                 <button type="button" className="button" onClick={addStar}>Submit</button>
             </div>
-
+            <Modal> currID={"1"} currThought={"hi"} currTag={""}</Modal>
         </div>
     );
 }
