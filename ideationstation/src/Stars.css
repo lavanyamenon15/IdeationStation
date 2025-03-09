@@ -37,7 +37,7 @@
     position: fixed;
     bottom: 40px; /* Adjust distance from the bottom */
     left: 50%;
-    transform: translateX(-36%); /* Right align */
+    transform: translateX(-40%); /* Right align */
     width: 80%; /* Adjust width */
     display: flex;
     justify-content: center;
@@ -112,4 +112,111 @@
     top: 10px;
     right: 10px;
     padding: 5px 7px;
+}
+
+/* Wrapper and Sizing */
+.w-full {
+  width: 100%;
+}
+
+.md\\:w-20rem {
+  width: 50rem;
+  max-width: 100%;
+}
+
+/* MultiSelect Container */
+.p-multiselect {
+  border-radius: 8px;
+  padding: 4px 8px;
+  background-color: rgb(228, 150, 251);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  max-width: 200px;
+}
+
+/* Placeholder Text */
+.p-multiselect-label {
+  color: #f2f4f8; /* Gray color */
+  font-size: 14px;
+  padding: 4px 8px;
+  max-width: 200px;
+}
+
+/* Chips (Selected Tags) */
+.p-multiselect-token {
+  background-color: white; /* Light blue */
+  color: rgb(228, 150, 251);
+  border-radius: 12px;
+  margin: 2px;
+  font-size: 12px;
+  max-width: 200px;
+}
+
+/* Chip Text */
+.p-multiselect-token-label {
+  padding: 2px 6px;
+  font-weight: 500;
+  max-width: 200px;
+}
+
+/* Close Button on Chips */
+.p-multiselect-token-icon {
+  color: white;
+  padding: 2px;
+  margin-left: 4px;
+  transition: color 0.2s;
+  max-width: 200px;
+}
+
+/* Dropdown Button */
+.p-multiselect-trigger {
+  background-color: transparent;
+  border: none;
+  color: #6b7280; /* Neutral gray */
+  transition: color 0.2s;
+  min-width: 30px;
+  max-width: 200px;
+}
+
+.p-multiselect-trigger:hover {
+  color: #1f2937; /* Darker gray */
+  max-width: 200px;
+}
+
+/* Focus and Active States */
+.p-multiselect:focus-within, 
+.p-multiselect.p-focus {
+  border-color: #3b82f6; /* Blue focus color */
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  max-width: 200px;
+}
+
+/* Dropdown Panel */
+.p-multiselect-panel {
+  border-radius: 8px;
+  border-color: #5185ef;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 100%;
+  max-width: 200px;
+}
+
+/* Options in the Dropdown */
+.p-multiselect-item {
+  background-color: white;
+  padding: 8px 12px;
+  transition: background-color 0.2s, color 0.2s;
+  max-width: 200px;
+}
+
+.p-multiselect-item:hover {
+  background-color: lightgray; /* Light gray on hover */
+  color: #111827; /* Dark text */
+  max-width: 200px;
+}
+
+/* Disabled Styles */
+.p-multiselect.p-disabled {
+  background-color: #f3f4f6;
+  color: #9ca3af;
+  cursor: not-allowed;
+  max-width: 200px;
 }

@@ -29,6 +29,7 @@ function Stars() {
         const {x, y, s} = getRandomPosition();
         console.log(valueRef.current.value)
         tags = selectedTags.map((e) => e.name)
+        console.log(tags)
 
         var requestOptions = {
             method : "POST",
@@ -37,8 +38,8 @@ function Stars() {
                 'Content-Type': 'application/json',
             },
             body : JSON.stringify({
-                "id": JSON.stringify(datalength + 1), // change thisss  
-                "thought": valueRef.current,
+                "id": (String) (datalength + 1), 
+                "thought": valueRef.current.value,
                 "tag": tags
             })
         }
@@ -51,7 +52,7 @@ function Stars() {
 
         setStars(prevStars => {
             if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
-            return [...prevStars, <Star id={id} thought={valueRef.current.value} tags={selectedTags.name} key={id} x={x} y={y} s={s} modalState={false}/>];
+            return [...prevStars, <Star id={id} thought={valueRef.current.value} tags={JSON.stringify(tags)} key={id} x={x} y={y} s={s} modalState={false}/>];
         });
         setdatalength(datalength + 1)
         setSelectedTags()
@@ -117,17 +118,14 @@ function Stars() {
                 {stars}
             </div>
 
-            <div>
-                <MultiSelect value={selectedTags} onChange={(e) => setSelectedTags(e.value)} options={tags} optionLabel="name" display="chip" 
-                    placeholder="Select Tags" maxSelectedLabels={3} className="w-full md:w-20rem" />
-            </div>
-
             <div className="Textbox">
                 <input
                     type="text"
                     ref={valueRef}
                     placeholder="Enter your thoughts..."
                 />
+                <MultiSelect value={selectedTags} onChange={(e) => setSelectedTags(e.value)} options={tags} optionLabel="name" display="chip" 
+                        placeholder="Select Tags" maxSelectedLabels={3} className="p-multiselect" />
                 <button type="button" className="button" onClick={addStar}>Submit</button>
             </div>
         
