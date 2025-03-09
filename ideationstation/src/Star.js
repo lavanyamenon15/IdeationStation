@@ -6,6 +6,8 @@ import background from './bg2.png';
 
 
 const Star = ({id, thought, tags, x, y}) => {
+
+
     return (
     <motion.img
         src={star}
