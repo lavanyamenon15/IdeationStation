@@ -17,7 +17,6 @@ function App() {
     <div className="App">
       <FilterTag></FilterTag>
       <Stars></Stars> 
-      <header className="App-header"></header>
     </div>
   );
 }
