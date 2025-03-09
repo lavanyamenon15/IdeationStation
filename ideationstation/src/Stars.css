@@ -1,7 +1,3 @@
-.App {
-    text-align: center;
-  }
-  
   .star-logo {
     height: 10vmin;
     pointer-events: none;
@@ -41,7 +37,7 @@
     position: fixed;
     bottom: 40px; /* Adjust distance from the bottom */
     left: 50%;
-    transform: translateX(-50%); /* Center horizontally */
+    transform: translateX(-36%); /* Right align */
     width: 80%; /* Adjust width */
     display: flex;
     justify-content: center;
@@ -62,7 +58,7 @@
     padding: 12px 20px;
     font-size: 16px;
     border: none;
-    background-color: #531bec;
+    background-color: #6D50C7;
     color: white;
     border-radius: 8px;
     cursor: pointer;
