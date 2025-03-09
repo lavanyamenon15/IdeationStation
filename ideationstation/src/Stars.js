@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Stars.css';
 import background from './bg2.png';
+import startexture from './stardust.png'
 
 
 const Star = ({x, y}) => {
@@ -44,8 +45,8 @@ function Stars() {
 
     return (
         <div className="Stars">
-            <header className="App-header" style={{backgroundImage: `url(${background})`}}>
-            </header>
+            <header className="App-header"></header>
+            {/* <header style={{backgroundImage: `url(${startexture})`}}></header> */}
 
             <div className="star-container">
                     {stars}
