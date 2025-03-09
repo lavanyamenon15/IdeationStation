@@ -47,7 +47,7 @@ function Stars() {
 
         setStars(prevStars => {
             if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
-            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} s={s} modalState={false}/>];
+            return [...prevStars, <Star id={id} thought={valueRef.current.value} tags={tags} key={id} x={x} y={y} s={s} modalState={false}/>];
         });
         setdatalength(datalength + 1)
         valueRef.current.value = ""
