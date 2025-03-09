@@ -1,0 +1,40 @@
+.box-container {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 180px; /* Adjust width as needed */
+    height: 100%; /* Make it fill most of the screen */
+    background-color: #1A1963; /* Light gray background */
+    border-radius: 0px;
+    padding: 20px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Enable scrolling if content overflows */
+  }
+   .box-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: white;
+    text-align: left;
+  }
+   .box-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  .box-button {
+    width: 100%;
+    padding: 8px;
+    font-size: 15px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    text-align: left;
+    background-color: transparent;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+  
+  .box-button:hover {
+    color: #7a7a7a;
+  }
+ 
