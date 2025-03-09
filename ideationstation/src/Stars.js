@@ -1,6 +1,4 @@
-import star from './star.svg';
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 import './Stars.css';
 import Star from './Star';
 
