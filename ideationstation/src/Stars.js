@@ -1,5 +1,5 @@
 import star from './star.svg';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import './Stars.css';
 import background from './bg2.png';
@@ -28,6 +28,7 @@ const Star = ({x, y}) => {
     // <img src={star} className="star-logo" alt="logo" />
 };
 
+
 function Stars() {
     const [stars, setStars] = useState([]);
 
@@ -41,6 +42,31 @@ function Stars() {
         const { x, y } = getRandomPosition();
         setStars(stars.concat(<Star key={stars.length} x={x} y={y}/>));
     };
+
+    const getStars = async () => {
+        var requestOptions = {
+            method : "GET",
+            redirect: "follow"
+        }
+
+        try{ 
+            var result = await fetch("http://localhost:3000/Thoughts", requestOptions)
+            var resultJSON = await result.json()
+            resultJSON.forEach(element => {
+                console.log(element.id)
+                console.log(element.thought)
+                console.log(element.tags)
+            });
+            // console.log(resultJSON)
+        } catch (e) {
+            
+        }
+
+    }
+
+    useEffect(()=> {
+        getStars();
+    })
 
     return (
         <div className="Stars">
