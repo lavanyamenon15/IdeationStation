@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import "./Modal.css";
 
-export default function Modal({currID, currThought, currTag}) {
-  const [modal, setModal] = useState(false);
+export default function Modal({currID, currThought, currTag, modalState}) {
+  const [modal, setModal] = useState(modalState);
  
  
   const toggleModal = () => {
@@ -20,9 +20,6 @@ export default function Modal({currID, currThought, currTag}) {
   return (
     // !!! Change the button to clicking the stars for the popup to come up
     <>
-      <button onClick={toggleModal} className="btn-modal">
-        Open
-      </button>
  
  
       {modal && (
