@@ -3,7 +3,7 @@
   }
   
   .star-logo {
-    height: 4vmin;
+    height: 10vmin;
     pointer-events: none;
   }
   
@@ -22,7 +22,7 @@
     background-color: #d9ccdc;
     border: none;
     color: white;
-    padding: 15px 32px;
+    padding: 25px 60px;
     border-radius: 12px;
     text-align: center;
     text-decoration: none;
