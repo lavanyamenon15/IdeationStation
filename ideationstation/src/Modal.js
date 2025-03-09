@@ -18,7 +18,6 @@ export default function Modal({currID, currThought, currTag, modalState}) {
  
  
   return (
-    // !!! Change the button to clicking the stars for the popup to come up
     <>
  
  
