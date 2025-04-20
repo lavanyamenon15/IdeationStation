@@ -1,6 +1,4 @@
-import star from './star.svg';
 import React, { useState, useEffect, useRef } from 'react';
-import { motion } from 'framer-motion';
 import './Stars.css';
 import Star from './Star';
 import { MultiSelect } from 'primereact/multiselect';
@@ -63,7 +61,7 @@ function Stars() {
         const {x, y} = getRandomPosition();
         setStars(prevStars => {
             if (prevStars.find(star => star.props.id === id)) return prevStars; // Prevent duplicates
-            return [...prevStars, <Star id={id} thought={thought} tags={tags} key={id} x={x} y={y} modalState={false} />];
+            return [...prevStars, <Star id={id} thought={thought} tags={JSON.stringify(tags)} key={id} x={x} y={y} modalState={false} />];
         });
     };
 
@@ -78,10 +76,10 @@ function Stars() {
             var result = await fetch("http://localhost:3000/Thoughts", requestOptions)
             var resultJSON = await result.json()
             setdatalength(resultJSON.length)
-            console.log(resultJSON.length)
+            // console.log(resultJSON.length)
             resultJSON.forEach(elm => {
-                // console.log(elm.id, elm.thought, elm.tags);
-                loadStar(elm.id, elm.thought, elm.tags);
+                // console.log(elm.id, elm.thought, elm.tag);
+                loadStar(elm.id, elm.thought, elm.tag);
             });
         } catch (e) {
             
